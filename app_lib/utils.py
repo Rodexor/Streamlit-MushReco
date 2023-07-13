@@ -76,7 +76,8 @@ def format_class_name(name):
     return c_name
 
 def get_first_paragraph_wiki(term):
-    wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','fr')
+    user_agent="MushReco/1.0 (https://mush-reco.streamlit.app; rodrigo.jolly@gmail.com)"
+    wiki_wiki = wikipediaapi.Wikipedia(user_agent,'fr')
     page = wiki_wiki.page(term)
     if page.exists():
         # paragraphs = page.text.split('\n')
@@ -84,7 +85,7 @@ def get_first_paragraph_wiki(term):
         #     return paragraphs[0]
         return page.summary
     else:
-        wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','en')
+        wiki_wiki = wikipediaapi.Wikipedia(user_agent,'en')
         page = wiki_wiki.page(term)
         if page.exists():
             # paragraphs = page.text.split('\n')
@@ -95,12 +96,13 @@ def get_first_paragraph_wiki(term):
             return None
 
 def get_page_wiki(term):
-    wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','fr')
+    user_agent=r'MushReco/1.0 (https://mush-reco.streamlit.app; rodrigo.jolly@gmail.com)'
+    wiki_wiki = wikipediaapi.Wikipedia(user_agent,'fr')
     page = wiki_wiki.page(term)
     if page.exists():
         return page.canonicalurl
     else:
-        wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','en')
+        wiki_wiki = wikipediaapi.Wikipedia(user_agent,'en')
         page = wiki_wiki.page(term)
         if page.exists():
             return page.canonicalurl
