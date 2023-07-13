@@ -76,7 +76,7 @@ def format_class_name(name):
     return c_name
 
 def get_first_paragraph_wiki(term):
-    wiki_wiki = wikipediaapi.Wikipedia('fr')
+    wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','fr')
     page = wiki_wiki.page(term)
     if page.exists():
         # paragraphs = page.text.split('\n')
@@ -84,7 +84,7 @@ def get_first_paragraph_wiki(term):
         #     return paragraphs[0]
         return page.summary
     else:
-        wiki_wiki = wikipediaapi.Wikipedia('en')
+        wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','en')
         page = wiki_wiki.page(term)
         if page.exists():
             # paragraphs = page.text.split('\n')
@@ -95,12 +95,12 @@ def get_first_paragraph_wiki(term):
             return None
 
 def get_page_wiki(term):
-    wiki_wiki = wikipediaapi.Wikipedia('fr')
+    wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','fr')
     page = wiki_wiki.page(term)
     if page.exists():
         return page.canonicalurl
     else:
-        wiki_wiki = wikipediaapi.Wikipedia('en')
+        wiki_wiki = wikipediaapi.Wikipedia('mush-reco (https://mush-reco.streamlit.app/)','en')
         page = wiki_wiki.page(term)
         if page.exists():
             return page.canonicalurl
