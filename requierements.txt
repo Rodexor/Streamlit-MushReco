@@ -1,0 +1,8 @@
+numpy>=1.25.0
+pandas>=2.0.2
+plotly>=5.15.0
+streamlit>=1.23.1
+streamlit-extras>=0.2.7
+wikipedia-api>=0.5.8
+rembg
+tensorflow>=2.12.0
